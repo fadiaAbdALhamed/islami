@@ -30,58 +30,59 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return
-       (Scaffold(
-         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          title: Text ('إسلامي',style: TextStyle(color: Colors.white)),
-        ),
-        extendBodyBehindAppBar: true,
-        body:
-        Container(
-        decoration: BoxDecoration(
-        image: DecorationImage(
-           image: AssetImage('assets/images/default_bg.png'),
-          fit: BoxFit.fill,
-        ),
-        ),
+       Container(
 
-            child: tabs[selectedIndex],),
+         decoration: BoxDecoration(
+           image: DecorationImage(
+             image: AssetImage('assets/images/default_bg.png'),
+             fit: BoxFit.fill,
+           ),
+         ),
+         child: (Scaffold(
+          appBar: AppBar(
+           // backgroundColor: Colors.transparent,
+            title: Text ('إسلامي',style: TextStyle(color: Colors.black)),
+          ),
+         // extendBodyBehindAppBar: true,
+          body:
+          tabs[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: selectedIndex,
-        onTap: (index){
-          selectedIndex =index;
-          setState(() {
+          type: BottomNavigationBarType.fixed,
+          currentIndex: selectedIndex,
+          onTap: (index){
+            selectedIndex =index;
+            setState(() {
 
-          });
-        },
-        items: [ BottomNavigationBarItem(
-            icon:ImageIcon(AssetImage('assets/images/moshaf_gold.png') )
-            ,label:'Quran' ),
+            });
+          },
+          items: [ BottomNavigationBarItem(
+              icon:ImageIcon(AssetImage('assets/images/moshaf_gold.png') )
+              ,label:'Quran' ),
 
-          BottomNavigationBarItem(
-              icon:ImageIcon(AssetImage('assets/images/hadeth.png'))
-              ,label:'Hadeth' ),
+            BottomNavigationBarItem(
+                icon:ImageIcon(AssetImage('assets/images/hadeth.png'))
+                ,label:'Hadeth' ),
 
-          BottomNavigationBarItem(
-              icon:ImageIcon(AssetImage('assets/images/sebha.png') )
-              ,label:'Sebha' ),
+            BottomNavigationBarItem(
+                icon:ImageIcon(AssetImage('assets/images/sebha.png') )
+                ,label:'Sebha' ),
 
-          BottomNavigationBarItem(
-            icon:ImageIcon(AssetImage('assets/images/radio.png'))
-            ,label:'Radio' ),
+            BottomNavigationBarItem(
+              icon:ImageIcon(AssetImage('assets/images/radio.png'))
+              ,label:'Radio' ),
 
-          BottomNavigationBarItem(
-              icon:Icon(Icons.settings_outlined)
-              ,label:'Settings' ),
+            BottomNavigationBarItem(
+                icon:Icon(Icons.settings_outlined)
+                ,label:'Settings' ),
 
-        ],
+          ],
 
       ),
 
       )
 
 
-    );
+    ),
+       );
   }
 }
