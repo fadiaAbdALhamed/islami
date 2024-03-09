@@ -47,6 +47,7 @@ List< String> suraNames = ["الفاتحه","البقرة","آل عمران","ا
   }
 
 }
+
 class SuraDetailsArgs{
   int index;
   String suraName;
